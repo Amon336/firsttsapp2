@@ -1,24 +1,13 @@
-import React from 'react';
+import React , {ReactNode , useState} from 'react';
 import logo from './logo.svg';
+import Card , {CardVariant} from './components/card'
 import './App.css';
 
 function App() {
+  const [width , setWidth] = useState<string>('400px')
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Card width={width} height='350px' variant={CardVariant.primary} onClick={() => setWidth('200px')}><h1> Hello world </h1></Card>
     </div>
   );
 }
